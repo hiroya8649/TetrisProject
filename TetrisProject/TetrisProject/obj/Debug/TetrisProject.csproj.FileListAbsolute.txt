@@ -1,0 +1,20 @@
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe.config
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\bin\Debug\TetrisProject.pdb
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.CoreCompileInputs.cache
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe.config
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\bin\Debug\TetrisProject.pdb
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.CoreCompileInputs.cache
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb
