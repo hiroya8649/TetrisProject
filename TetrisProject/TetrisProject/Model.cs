@@ -18,85 +18,281 @@ namespace TetrisProject
         public class Brick
         {
             private Tetrominoes pieceShape;
-            private int[][] coords;//形狀 九宮格  中間那格當0,0  (之後再改)
-            private int[][][] coordsTable;
+            private Color pieceColor;
+            private int width, height, angle, x, y;
+            static int[][] lenTable = new int[][]
+            {
+                new int[]{ 2,2 },
+                new int[]{ 2,3 },
+                new int[]{ 2,3 },
+                new int[]{ 1,4 },
+                new int[]{ 2,3 },
+                new int[]{ 2,2 },
+                new int[]{ 2,3 },
+                new int[]{ 2,3 }
+            };
+            static int[][][][] shapeTable = new int[][][][]
+            {
+               new int[][][]{//No
+                   new int[][]{ new int[]{ 0,0 }, new int[] { 0,0 } },
+                   new int[][]{ new int[]{ 0,0 }, new int[] { 0,0 } },
+                   new int[][]{ new int[]{ 0,0 }, new int[] { 0,0 } },
+                   new int[][]{ new int[]{ 0,0 }, new int[] { 0,0 } }
+               },
+               new int[][][]{//Z
+                   new int[][]{ new int[]{ 0,1 }, new int[] { 1,1 }, new int[] { 1,0 } },
+                   new int[][]{ new int[]{ 1,1,0 }, new int[] { 0,1,1 } },
+                   new int[][]{ new int[]{ 0,1 }, new int[] { 1,1 }, new int[] { 1,0 } },
+                   new int[][]{ new int[]{ 1,1,0 }, new int[] { 0,1,1 } }
+               },
+               new int[][][]{//S
+                   new int[][]{ new int[]{ 1,0 }, new int[] { 1,1 }, new int[] { 0,1 } },
+                   new int[][]{ new int[]{ 0,1,1 }, new int[] { 1,1,0 } },
+                   new int[][]{ new int[]{ 1,0 }, new int[] { 1,1 }, new int[] { 0,1 } },
+                   new int[][]{ new int[]{ 0,1,1 }, new int[] { 1,1,0 } }
+               },
+               new int[][][]{//I
+                   new int[][]{ new int[]{ 1 }, new int[] { 1 }, new int[] { 1 }, new int[] { 1 } },
+                   new int[][]{ new int[]{ 1,1,1,1 }},
+                   new int[][]{ new int[]{ 1 }, new int[] { 1 }, new int[] { 1 }, new int[] { 1 } },
+                   new int[][]{ new int[]{ 1,1,1,1 }}
+               },
+               new int[][][]{//T
+                   new int[][]{ new int[]{ 1,0 }, new int[] { 1,1 }, new int[] { 1,0 } },
+                   new int[][]{ new int[]{ 1,1,1 }, new int[] { 0,1,0 } },
+                   new int[][]{ new int[]{ 0,1 }, new int[] { 1,1 }, new int[] { 0,1 } },
+                   new int[][]{ new int[]{ 0,1,0 }, new int[] { 1,1,1 } }
+               },
+               new int[][][]{//SQ
+                   new int[][]{ new int[]{ 1,1 }, new int[] { 1,1 } },
+                   new int[][]{ new int[]{ 1,1 }, new int[] { 1,1 } },
+                   new int[][]{ new int[]{ 1,1 }, new int[] { 1,1 } },
+                   new int[][]{ new int[]{ 1,1 }, new int[] { 1,1 } }
+               },
+               new int[][][]{//L
+                   new int[][]{ new int[]{ 1,0 }, new int[] { 1,0 }, new int[] { 1,1 } },
+                   new int[][]{ new int[]{ 1,1,1 }, new int[] { 1,0,0 } },
+                   new int[][]{ new int[]{ 1,1 }, new int[] { 0,1 }, new int[] { 0,1 } },
+                   new int[][]{ new int[]{ 0,0,1 }, new int[] { 1,1,1 } }
+               },
+               new int[][][]{//ML
+                   new int[][]{ new int[]{ 0,1 }, new int[] { 0,1 }, new int[] { 1,1 } },
+                   new int[][]{ new int[]{ 1,0,0 }, new int[] { 1,1,1 } },
+                   new int[][]{ new int[]{ 1,1 }, new int[] { 1,0 }, new int[] { 1,0 } },
+                   new int[][]{ new int[]{ 1,1,1 }, new int[] { 0,0,1 } }
+               }
+            };
+            private int[][] shapeNow;
+
+            public int getWidth() { return width; }
+            public int getHeight() { return height; }
+            public int getX() { return x; }
+            public int getY() { return y; }
+            public int getAngle() { return angle; }
+            public int[][] getShape() { return shapeNow; }
+
             public Brick()
             {
-                //coords = new int[4][2];
-                //setShape(Tetrominoes.NoShape);
+                width = 0; height = 0; angle = 0;
+                x = 5; y = 0;
+                pieceShape = Tetrominoes.NoShape;
             }
-            public void setShape(Tetrominoes shape)
-            {
-                //    coordsTable = new int[][][] {
-                //{ { 0, 0 },   { 0, 0 },   { 0, 0 },   { 0, 0 } },
-                //{ { 0, -1 },  { 0, 0 },   { -1, 0 },  { -1, 1 } },
-                //{ { 0, -1 },  { 0, 0 },   { 1, 0 },   { 1, 1 } },
-                //{ { 0, -1 },  { 0, 0 },   { 0, 1 },   { 0, 2 } },
-                //{ { -1, 0 },  { 0, 0 },   { 1, 0 },   { 0, 1 } },
-                //{ { 0, 0 },   { 1, 0 },   { 0, 1 },   { 1, 1 } },
-                //{ { -1, -1 }, { 0, -1 },  { 0, 0 },   { 0, 1 } },
-                //{ { 1, -1 },  { 0, -1 },  { 0, 0 },   { 0, 1 } }
-                //};
 
-                //    for (int i = 0; i < 4; i++)
-                //    {
-                //        for (int j = 0; j < 2; ++j)
-                //        {
-                //            coords[i][j] = coordsTable[shape.ordinal()][i][j];
-                //        }
-                //    }
-                //    pieceShape = shape;
+            public void setShape(Tetrominoes shape, Color color)
+            {
+                pieceShape = shape;
+                pieceColor = color;
+                width = lenTable[(int)shape][0];
+                height = lenTable[(int)shape][1];
+                shapeNow = shapeTable[(int)shape][angle];
             }
-            private void setShapeX(int index, int x) { coords[index][0] = x; }
-            private void setShapeY(int index, int y) { coords[index][1] = y; }
+
             public int getShape_minY()//找出最低的Y
             {
-                int m = coords[0][1];
-                for (int i = 0; i < 4; i++)
-                {
-                    m = Math.Min(m, coords[i][1]);
-                }
-                return m;
+                return 0;
             }
             public Brick rotate()//將方塊右轉 回傳結果
             {
-                if (pieceShape == Tetrominoes.SquareShape)
-                    return this;
+                int tmp = width;
+                width = height;
+                height = tmp;
 
-                Brick result = new Brick();
-                result.pieceShape = pieceShape;
-
-                for (int i = 0; i < 4; ++i)
-                {
-                    result.setShapeX(i, -coords[i][1]);
-                    result.setShapeY(i, coords[i][0]);
-                }
-                return result;
+                angle += 1;
+                if (angle > 3) angle = 0;
+                shapeNow = shapeTable[(int)pieceShape][angle];
+                return this;
             }
             public Brick moveRight()//將方塊右移 回傳結果 
             {
-                Brick result = new Brick();
-                return result;
+                x += 1;
+                return this;
             }
             public Brick moveLeft()//將方塊左移 回傳結果 
             {
-                Brick result = new Brick();
-                return result;
+                x -= 1;
+                return this;
             }
-            public Brick moveDown(int y)//將方塊往下 回傳結果 
+            public Brick moveDown()//將方塊往下 回傳結果 
             {
-                Brick result = new Brick();
-                return result;
+                y += 1;
+                return this;
             }
             public Brick moveOneLineDown()//方塊慢慢落下 回傳結果 
             {
-                Brick result = new Brick();
-                return result;
+                return this;
             }
 
             /*21 add in 11/28*/
             public void changeSpeed() { }//變更level
         }
+
+        public class Board
+        {
+            Graphics g;
+            int[,] boardTable;
+            int gapRow, gapCol;
+            int rowSize,colSize;
+
+            public Board()
+            {
+
+            }
+
+            public void setBoard(Point size, int row, int col)
+            {
+                gapRow = size.X / row;
+                gapCol = size.Y / col;
+                rowSize = row;
+                colSize = col;
+                boardTable = new int[row, col];
+                for (int i = 0; i < row; i++)
+                {
+                    for (int j = 0; j < col; j++)
+                    {
+                        boardTable[i, j] = 0;
+                    }
+                }
+            }
+
+            public void pasteBrick(Brick b)
+            {
+                for (int i = 0; i < b.getHeight(); i++)
+                {
+                    for (int j = 0; j < b.getWidth(); j++)
+                    {
+                        if (b.getShape()[i][j] == 1)
+                            boardTable[b.getX() + i, b.getY() + j] = 2;
+                    }
+                }
+            }
+
+            public bool isLeftEmpty(Brick b)
+            {
+                if (b.getX() == 0)
+                    return false;
+                for (int i = 0; i < b.getHeight(); i++)
+                {
+                    for (int j = 0; j < b.getWidth(); j++)
+                    {
+                        if (b.getShape()[i][j] == 1)
+                        {
+                            if (boardTable[b.getX() + i - 1, b.getY() + j] == 2)
+                                return false;
+                            else
+                                break;
+                        }
+                    }
+                }
+                return true;
+            }
+
+            public bool isRightEmpty(Brick b)
+            {
+                if (b.getX()+b.getWidth() == rowSize)
+                    return false;
+                for (int i = b.getHeight() - 1 ; i >=0 ; i-- )
+                {
+                    for (int j = b.getWidth() - 1; j >=0 ; j--)
+                    {
+                        if (b.getShape()[i][j] == 1)
+                        {
+                            if (boardTable[b.getX() + i + 1, b.getY() + j] == 2)
+                                return false;
+                            else
+                                break;
+                        }
+                    }
+                }
+                return true;
+            }
+
+            public bool isDownEmpty(Brick b)
+            {
+                if (b.getY() + b.getHeight() == colSize)
+                    return false;
+                for (int i = 0; i < b.getWidth(); i++)
+                {
+                    for (int j = b.getHeight() - 1 ; j >= 0 ; j--)
+                    {
+                        if (b.getShape()[i][j] == 1)
+                        {
+                            if (boardTable[b.getX() + i , b.getY() + j + 1] == 2)
+                                return false;
+                            else
+                                break;
+                        }
+                    }
+                }
+                return true;
+            }
+
+            public bool fullCheck()//若有消掉任何一列會回傳true
+            {
+                bool flag = false;
+                for (int i=0;i<colSize;i++)
+                    for(int j=0;j<rowSize;j++)
+                    {
+                        if (boardTable[i, j] != 2)
+                            break;
+                        else
+                        {
+                            if (j == rowSize - 1)
+                            {
+                                flag = true;
+                                for (int k = i; k > 0; k--)
+                                    for (int l = 0; l < rowSize; l++)
+                                    {
+                                        boardTable[k, l] = boardTable[k - 1, l];
+                                    }
+                                for (int l = 0; l < rowSize; l++)
+                                {
+                                    boardTable[0, l] = 0;
+                                }
+                            }
+                        }
+
+                    }
+
+                return flag;
+            }
+
+            public bool deadCheck(Brick next)
+            {
+                for (int i = 0; i < next.getHeight(); i++)
+                {
+                    for (int j = 0; j < next.getWidth(); j++)
+                    {
+                        if (next.getShape()[i][j] == 1)
+                        {
+                            if (boardTable[next.getX() + i, next.getY() + j] == 2)
+                                return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+
         public class Background
         {
             private int BoardW = 0;//主畫面的大小
@@ -119,8 +315,8 @@ namespace TetrisProject
                 btnPause.X = 0;
                 btnPause.Y = 0;
             }
-            
-            public Background(int W,int H,int BrickW, int BrickH, int BrickX, int BrickY, int StartX, int StartY, int PauseX, int PauseY)
+
+            public Background(int W, int H, int BrickW, int BrickH, int BrickX, int BrickY, int StartX, int StartY, int PauseX, int PauseY)
             {
                 BoardW = W;
                 BoardH = H;
@@ -133,7 +329,7 @@ namespace TetrisProject
                 btnPause.X = PauseX;
                 btnPause.Y = PauseY;
             }
-            public void getBoardSize(ref int W,ref int H) { W = BoardW;H = BoardH; }
+            public void getBoardSize(ref int W, ref int H) { W = BoardW; H = BoardH; }
             public void getBrickBoardSize(ref int W, ref int H) { W = BrickBoardW; H = BrickBoardH; }
             public Point getBrickBoardPosition() { return BrickBoard; }
             public Point getbtnStartPosition() { return btnStart; }

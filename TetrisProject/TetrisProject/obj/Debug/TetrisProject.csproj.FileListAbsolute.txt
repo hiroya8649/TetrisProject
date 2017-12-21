@@ -18,3 +18,12 @@ C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProj
 C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.CoreCompileInputs.cache
 C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
 C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb
+D:\Google Drive\_hw\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe.config
+D:\Google Drive\_hw\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe
+D:\Google Drive\_hw\TetrisProject\TetrisProject\bin\Debug\TetrisProject.pdb
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb

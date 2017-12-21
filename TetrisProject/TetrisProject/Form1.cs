@@ -25,8 +25,7 @@ namespace TetrisProject
             Point btnStartPosition;
             Point btnPausePosition;
             GameView.setForm(out form1_width,out form1_height,out btnStartPosition,out btnPausePosition);
-
-            this.Width = form1_width;
+                        this.Width = form1_width;
             this.Height = form1_height;
             btn_start.Location = btnStartPosition;
             btn_pause.Location = btnPausePosition;
