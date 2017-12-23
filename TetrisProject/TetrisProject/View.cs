@@ -22,6 +22,7 @@ namespace TetrisProject
             //picture update
             GameController.update();
         }
+
         public void setForm(out int formWidth, out int formHeight, out Point btnStartPosition, out Point btnPausePosition)
         {
             formWidth = 0;
@@ -30,10 +31,12 @@ namespace TetrisProject
             btnStartPosition = bg1.getbtnStartPosition();
             btnPausePosition = bg1.getbtnPausePosition();
         }
+
         public void btnStart()
         {
             GameController.start();
         }
+
         public void btnPause()
         {
             if (!isGamePause)
@@ -41,6 +44,7 @@ namespace TetrisProject
             //else
             //    GameController.resume();
         }
+
         public void keyEvent(KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -62,6 +66,7 @@ namespace TetrisProject
 
         /*21 add function in 11/27*/
         public void btnResume() { }
+
         public string getScore() {return GameController.getScore().ToString();}
 
         public void changeLevel(int level)
@@ -69,8 +74,11 @@ namespace TetrisProject
             GameController.changeLevel(level);
         }
 
+        public void gameOver()
+        {
 
-
+        }
+        
         private void drawSquare(Graphics g, int x, int y, Tetrominoes shape)
         {
             //    Color colors[] = { new Color(0, 0, 0), new Color(204, 102, 102),

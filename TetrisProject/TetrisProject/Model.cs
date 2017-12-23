@@ -90,12 +90,25 @@ namespace TetrisProject
             public int getY() { return y; }
             public int getAngle() { return angle; }
             public int[][] getShape() { return shapeNow; }
+            public Tetrominoes getShapeType() { return pieceShape; }
+            public Color getColor() { return pieceColor; }
 
             public Brick()
             {
                 width = 0; height = 0; angle = 0;
                 x = 5; y = 0;
                 pieceShape = Tetrominoes.NoShape;
+            }
+
+            public Brick(Brick b)
+            {
+                pieceShape = b.getShapeType();
+                pieceColor = b.pieceColor;
+                this.setX(b.getX()); this.setY(b.getY());
+                angle = b.getAngle();
+                width = b.getWidth();
+                height = b.getHeight();
+                shapeNow = b.getShape();
             }
 
             public void setShape(Tetrominoes shape, Color color)
@@ -106,6 +119,10 @@ namespace TetrisProject
                 height = lenTable[(int)shape][1];
                 shapeNow = shapeTable[(int)shape][angle];
             }
+
+            public void setX(int xIn) { x = xIn; }
+
+            public void setY(int yIn) { y = yIn; }
 
             public int getShape_minY()//找出最低的Y
             {
@@ -137,31 +154,25 @@ namespace TetrisProject
                 y += 1;
                 return this;
             }
-            public Brick moveOneLineDown()//方塊慢慢落下 回傳結果 
-            {
-                return this;
-            }
 
-            /*21 add in 11/28*/
             public void changeSpeed() { }//變更level
         }
 
         public class Board
         {
-            Graphics g;
-            int[,] boardTable;
-            int gapRow, gapCol;
-            int rowSize,colSize;
+            private int[,] boardTable;
+            private int gapRow, gapCol;
+            private int rowSize,colSize;
+
+            public int[,] getBoard() { return boardTable; }
 
             public Board()
             {
 
             }
 
-            public void setBoard(Point size, int row, int col)
+            public void setBoard( int row, int col)
             {
-                gapRow = size.X / row;
-                gapCol = size.Y / col;
                 rowSize = row;
                 colSize = col;
                 boardTable = new int[row, col];
@@ -246,6 +257,26 @@ namespace TetrisProject
                 return true;
             }
 
+            public bool isRotatible(Brick b)
+            {
+                if (b.getX() + b.getHeight() >= rowSize)
+                    return false;
+                Brick testB = new Brick(b);
+                testB.rotate();
+                for (int i = 0; i < testB.getHeight(); i++)
+                {
+                    for (int j = 0; j < testB.getWidth(); j++)
+                    {
+                        if (testB.getShape()[i][j] == 1)
+                        {
+                            if (boardTable[testB.getX() + i, testB.getY() + j] == 2)
+                                return false;
+                        }
+                    }
+                }
+                return true;
+            }
+
             public bool fullCheck()//若有消掉任何一列會回傳true
             {
                 bool flag = false;
@@ -275,7 +306,7 @@ namespace TetrisProject
 
                 return flag;
             }
-
+            
             public bool deadCheck(Brick next)
             {
                 for (int i = 0; i < next.getHeight(); i++)
