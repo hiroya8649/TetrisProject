@@ -1,0 +1,40 @@
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe.config
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\bin\Debug\TetrisProject.pdb
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.CoreCompileInputs.cache
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
+C:\Users\super\Dropbox\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe.config
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\bin\Debug\TetrisProject.pdb
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.CoreCompileInputs.cache
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
+C:\Data\MEGA cloud\軟體工程\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb
+D:\Google Drive\_hw\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe.config
+D:\Google Drive\_hw\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe
+D:\Google Drive\_hw\TetrisProject\TetrisProject\bin\Debug\TetrisProject.pdb
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb
+D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.View.resources
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\bin\Debug\TetrisProject.exe.config
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\bin\Debug\TetrisProject.exe
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\bin\Debug\TetrisProject.pdb
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\obj\Debug\TetrisProject.View.resources
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\obj\Debug\TetrisProject.exe
+D:\NTUST\大三\軟體工程\project\part.3\TetrisProject\obj\Debug\TetrisProject.pdb
