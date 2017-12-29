@@ -43,6 +43,7 @@
             // 
             // gameTimer
             // 
+            this.gameTimer.Interval = 200;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
             // btn_start
@@ -58,6 +59,7 @@
             // 
             // btn_pause
             // 
+            this.btn_pause.Enabled = false;
             this.btn_pause.Location = new System.Drawing.Point(475, 265);
             this.btn_pause.Margin = new System.Windows.Forms.Padding(4);
             this.btn_pause.Name = "btn_pause";
@@ -103,6 +105,7 @@
             // 
             // btn_resume
             // 
+            this.btn_resume.Enabled = false;
             this.btn_resume.Location = new System.Drawing.Point(568, 198);
             this.btn_resume.Margin = new System.Windows.Forms.Padding(4);
             this.btn_resume.Name = "btn_resume";
@@ -118,7 +121,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(24, 30);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(428, 638);
+            this.pictureBox1.Size = new System.Drawing.Size(357, 446);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 

@@ -37,3 +37,13 @@ D:\Git\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.
 D:\Git\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.CoreCompileInputs.cache
 D:\Git\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
 D:\Git\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe.config
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\bin\Debug\TetrisProject.pdb
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.CoreCompileInputs.cache
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
+C:\Users\Asus\TetrisProject\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb

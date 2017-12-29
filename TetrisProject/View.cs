@@ -86,7 +86,6 @@ namespace TetrisProject
         }
 
         /*21 add function in 11/27*/
-        public void btnResume() { }
 
         public string getScore() {return GameController.getScore().ToString();}
 
@@ -97,7 +96,7 @@ namespace TetrisProject
 
         public void gameOver()
         {
-
+            form.gameOver();
         }
         
         private void drawSquare(Graphics g, int x, int y, Tetrominoes shape)

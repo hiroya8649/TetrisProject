@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 
+
 namespace TetrisProject
 {
     public enum Tetrominoes
@@ -14,7 +15,7 @@ namespace TetrisProject
         TShape, SquareShape, LShape, MirroredLShape
     };
     public class Model
-    { 
+    {
         public class Brick
         {
             private Tetrominoes pieceShape;
@@ -193,11 +194,11 @@ namespace TetrisProject
 
             public void pasteBrick(Brick b)
             {
-                for (int i = 0; i < b.getHeight(); i++)
+                for (int i = 0; i < b.getWidth(); i++)
                 {
-                    for (int j = 0; j < b.getWidth(); j++)
+                    for (int j = 0; j < b.getHeight(); j++)
                     {
-                        if (b.getShape()[i][j] == 1)
+                        if (b.getShape()[j][i] == 1)
                         {
                             boardTable[b.getY() + j, b.getX() + i] = 2;
                             boardColor[b.getY() + j, b.getX() + i] = b.getColor();
@@ -210,11 +211,11 @@ namespace TetrisProject
             {
                 if (b.getX() == 0)
                     return false;
-                for (int i = 0; i < b.getHeight(); i++)
+                for (int i = 0; i < b.getWidth(); i++)
                 {
-                    for (int j = 0; j < b.getWidth(); j++)
+                    for (int j = 0; j < b.getHeight(); j++)
                     {
-                        if (b.getShape()[i][j] == 1)
+                        if (b.getShape()[j][i] == 1)
                         {
                             if (boardTable[b.getY() + j, b.getX() + i - 1] == 2)
                                 return false;
@@ -230,11 +231,11 @@ namespace TetrisProject
             {
                 if (b.getX()+b.getWidth() == rowSize)
                     return false;
-                for (int i = b.getHeight() - 1 ; i >=0 ; i-- )
+                for (int i = b.getWidth() - 1 ; i >=0 ; i-- )
                 {
-                    for (int j = b.getWidth() - 1; j >=0 ; j--)
+                    for (int j = b.getHeight() - 1; j >=0 ; j--)
                     {
-                        if (b.getShape()[i][j] == 1)
+                        if (b.getShape()[j][i] == 1)
                         {
                             if (boardTable[b.getY() + j, b.getX() + i + 1] == 2)
                                 return false;
@@ -268,17 +269,17 @@ namespace TetrisProject
 
             public bool isRotatible(Brick b)
             {
-                if (b.getX() + b.getHeight() >= rowSize)
+                if (b.getX() + b.getHeight() > rowSize)
                     return false;
                 Brick testB = new Brick(b);
                 testB.rotate();
-                for (int i = 0; i < testB.getHeight(); i++)
+                for (int i = 0; i < testB.getWidth(); i++)
                 {
-                    for (int j = 0; j < testB.getWidth(); j++)
+                    for (int j = 0; j < testB.getHeight(); j++)
                     {
-                        if (testB.getShape()[i][j] == 1)
+                        if (testB.getShape()[j][i] == 1)
                         {
-                            if (boardTable[testB.getX() + i, testB.getY() + j] == 2)
+                            if (boardTable[testB.getY() + j, testB.getX() + i] == 2)
                                 return false;
                         }
                     }
@@ -320,13 +321,13 @@ namespace TetrisProject
             
             public bool deadCheck(Brick next)
             {
-                for (int i = 0; i < next.getHeight(); i++)
+                for (int i = 0; i < next.getWidth(); i++)
                 {
-                    for (int j = 0; j < next.getWidth(); j++)
+                    for (int j = 0; j < next.getHeight(); j++)
                     {
-                        if (next.getShape()[i][j] == 1)
+                        if (next.getShape()[j][i] == 1)
                         {
-                            if (boardTable[next.getX() + i, next.getY() + j] == 2)
+                            if (boardTable[next.getY() + j, next.getX() + i] == 2)
                                 return true;
                         }
                     }
