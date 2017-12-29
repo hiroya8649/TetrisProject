@@ -26,6 +26,8 @@ namespace TetrisProject
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Focus();
+            this.KeyPreview = true;
             GameView = new View();
             GameController = new Controller(this, GameView);
             int form1_width = this.Width;
@@ -33,7 +35,7 @@ namespace TetrisProject
             Point btnStartPosition;
             Point btnPausePosition;
             GameView.setForm(out form1_width,out form1_height,out btnStartPosition,out btnPausePosition);
-                        this.Width = form1_width;
+            this.Width = form1_width;
             this.Height = form1_height;
             btn_start.Location = btnStartPosition;
             btn_pause.Location = btnPausePosition;
@@ -45,13 +47,18 @@ namespace TetrisProject
 
         private void btn_start_Click(object sender, EventArgs e)
         {
+
             GameView.btnStart();
+            btn_pause.Enabled = true;
             gameTimer.Start();
+            
         }
         
         private void btn_pause_Click(object sender, EventArgs e)
         {
             GameView.btnPause();
+            btn_pause.Enabled = false;
+            btn_resume.Enabled = true;
             gameTimer.Stop();
         }
 
@@ -64,11 +71,14 @@ namespace TetrisProject
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             GameView.keyEvent(e);
+            this.Focus();
         }
 
         private void btn_resume_Click(object sender, EventArgs e)
         {
-           
+            btn_pause.Enabled = true;
+            btn_resume.Enabled = false;
+            gameTimer.Start();
         }
         private void changeScore()
         {
@@ -88,10 +98,10 @@ namespace TetrisProject
 
             g.Graphics.Clear(Color.White);
 
-            for (int i = 0; i < brick.getHeight(); i++)
-                for (int j = 0; j < brick.getWidth(); j++)
+            for (int i = 0; i < brick.getWidth(); i++)
+                for (int j = 0; j < brick.getHeight(); j++)
                 {
-                    if (brick.getShape()[i][j] == 1)
+                    if (brick.getShape()[j][i] == 1)
                         cubeDraw(brick.getX() + i, brick.getY() + j, gapRaw, gapCol, brick.getColor());
                 }
             for (int i = 0; i < board.getColSize(); i++)
@@ -112,5 +122,10 @@ namespace TetrisProject
             b.Dispose();
         }
 
+        public void gameOver()
+        {
+            gameTimer.Enabled = false;
+            MessageBox.Show("Game Over");
+        }
     }
 }
