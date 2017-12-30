@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 
-
 namespace TetrisProject
 {
     public enum Tetrominoes
@@ -93,7 +92,7 @@ namespace TetrisProject
             public int[][] getShape() { return shapeNow; }
             public Tetrominoes getShapeType() { return pieceShape; }
             public Color getColor() { return pieceColor; }
-
+        
             public Brick()
             {
                 width = 0; height = 0; angle = 0;
@@ -287,9 +286,9 @@ namespace TetrisProject
                 return true;
             }
 
-            public bool fullCheck()//若有消掉任何一列會回傳true
+            public int fullCheck()//若有消掉任何一列會回傳列數
             {
-                bool flag = false;
+                int flag = 0;
                 for (int i=0;i<colSize;i++)
                     for(int j=0;j<rowSize;j++)
                     {
@@ -299,7 +298,7 @@ namespace TetrisProject
                         {
                             if (j == rowSize - 1)
                             {
-                                flag = true;
+                                flag += 1;
                                 for (int k = i; k > 0; k--)
                                     for (int l = 0; l < rowSize; l++)
                                     {
@@ -336,48 +335,48 @@ namespace TetrisProject
             }
         }
 
-        public class Background
-        {
-            private int BoardW = 0;//主畫面的大小
-            private int BoardH = 0;
-            private int BrickBoardW = 0;//遊戲畫面的大小
-            private int BrickBoardH = 0;
-            private Point BrickBoard = new Point(0, 0);//遊戲畫面的位置
-            private Point btnStart = new Point(0, 0);//開始按鈕的位置
-            private Point btnPause = new Point(0, 0);//暫停按鈕的位置
-            public Background()
-            {
-                BoardW = 0;
-                BoardH = 0;
-                BrickBoardW = 0;
-                BrickBoardH = 0;
-                BrickBoard.X = 0;
-                BrickBoard.Y = 0;
-                btnStart.X = 0;
-                btnStart.Y = 0;
-                btnPause.X = 0;
-                btnPause.Y = 0;
-            }
+        //public class Background
+        //{
+        //    private int BoardW = 0;//主畫面的大小
+        //    private int BoardH = 0;
+        //    private int BrickBoardW = 0;//遊戲畫面的大小
+        //    private int BrickBoardH = 0;
+        //    private Point BrickBoard = new Point(0, 0);//遊戲畫面的位置
+        //    private Point btnStart = new Point(0, 0);//開始按鈕的位置
+        //    private Point btnPause = new Point(0, 0);//暫停按鈕的位置
+        //    public Background()
+        //    {
+        //        BoardW = 0;
+        //        BoardH = 0;
+        //        BrickBoardW = 0;
+        //        BrickBoardH = 0;
+        //        BrickBoard.X = 0;
+        //        BrickBoard.Y = 0;
+        //        btnStart.X = 0;
+        //        btnStart.Y = 0;
+        //        btnPause.X = 0;
+        //        btnPause.Y = 0;
+        //    }
 
-            public Background(int W, int H, int BrickW, int BrickH, int BrickX, int BrickY, int StartX, int StartY, int PauseX, int PauseY)
-            {
-                BoardW = W;
-                BoardH = H;
-                BrickBoardW = BrickW;
-                BrickBoardH = BrickH;
-                BrickBoard.X = BrickX;
-                BrickBoard.Y = BrickY;
-                btnStart.X = StartX;
-                btnStart.Y = StartY;
-                btnPause.X = PauseX;
-                btnPause.Y = PauseY;
-            }
-            public void getBoardSize(ref int W, ref int H) { W = BoardW; H = BoardH; }
-            public void getBrickBoardSize(ref int W, ref int H) { W = BrickBoardW; H = BrickBoardH; }
-            public Point getBrickBoardPosition() { return BrickBoard; }
-            public Point getbtnStartPosition() { return btnStart; }
-            public Point getbtnPausePosition() { return btnPause; }
-        }
+        //    public Background(int W, int H, int BrickW, int BrickH, int BrickX, int BrickY, int StartX, int StartY, int PauseX, int PauseY)
+        //    {
+        //        BoardW = W;
+        //        BoardH = H;
+        //        BrickBoardW = BrickW;
+        //        BrickBoardH = BrickH;
+        //        BrickBoard.X = BrickX;
+        //        BrickBoard.Y = BrickY;
+        //        btnStart.X = StartX;
+        //        btnStart.Y = StartY;
+        //        btnPause.X = PauseX;
+        //        btnPause.Y = PauseY;
+        //    }
+        //    public void getBoardSize(ref int W, ref int H) { W = BoardW; H = BoardH; }
+        //    public void getBrickBoardSize(ref int W, ref int H) { W = BrickBoardW; H = BrickBoardH; }
+        //    public Point getBrickBoardPosition() { return BrickBoard; }
+        //    public Point getbtnStartPosition() { return btnStart; }
+        //    public Point getbtnPausePosition() { return btnPause; }
+        //}
 
     }
 }

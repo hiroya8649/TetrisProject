@@ -14,7 +14,7 @@ namespace TetrisProject
     {
         //主畫面大小WH 遊戲畫面大小WH 遊戲畫面位置XY 開始按鈕位置XY 暫停按鈕位置XY
         
-        private Background bg1 = new Background(500, 500, 200, 300, 0, 0, 1, 1, 50, 50);
+        //private Background bg1 = new Background(500, 500, 200, 300, 0, 0, 1, 1, 50, 50);
         private Controller GameController;
         private Form1 form;
         bool isGamePause = false;
@@ -37,20 +37,10 @@ namespace TetrisProject
         public void update(Board board,Brick brick)
         {
             int w = 0, h = 0;
-            bg1.getBrickBoardSize(ref w, ref h);
+            w = form.getBoardSize().Width;
+            h = form.getBoardSize().Height;
             form.gameDraw(board, brick, w, h);
-
-            //picture update
-            //GameController.update();
-        }
-
-        public void setForm(out int formWidth, out int formHeight, out Point btnStartPosition, out Point btnPausePosition)
-        {
-            formWidth = 0;
-            formHeight = 0;
-            bg1.getBoardSize(ref formWidth, ref formHeight);
-            btnStartPosition = bg1.getbtnStartPosition();
-            btnPausePosition = bg1.getbtnPausePosition();
+            form.changeScore();
         }
 
         public void btnStart()
@@ -70,16 +60,19 @@ namespace TetrisProject
         {
             switch (e.KeyCode)
             {
-                case Keys.Right:
+                case Keys.D:
                     GameController.BrickMoveRight();
                     break;
-                case Keys.Left:
+                case Keys.A:
                     GameController.BrickMoveLeft();
                     break;
-                //case Keys.Down:
-                //    GameController.BrickDropDown();
-                //    break;
-                case Keys.Z:
+                case Keys.S:
+                    GameController.BrickDropDown();
+                    break;
+                case Keys.Space:
+                    GameController.BrickDropDown();
+                    break;
+                case Keys.W:
                     GameController.BrickRotate();
                     break;
             }
@@ -88,11 +81,6 @@ namespace TetrisProject
         /*21 add function in 11/27*/
 
         public string getScore() {return GameController.getScore().ToString();}
-
-        public void changeLevel(int level)
-        {
-            GameController.changeLevel(level);
-        }
 
         public void gameOver()
         {
