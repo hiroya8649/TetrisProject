@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace TetrisProject
 {
     static class Program
-    {
+    {   
         /// <summary>
         /// 應用程式的主要進入點。
         /// </summary>
@@ -16,7 +16,6 @@ namespace TetrisProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Controller GameController = new Controller();
             Application.Run(new Form1());
         }
     }
