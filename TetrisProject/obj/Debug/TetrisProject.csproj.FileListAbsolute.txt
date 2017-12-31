@@ -28,3 +28,13 @@ D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.G
 D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
 D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb
 D:\Google Drive\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.View.resources
+D:\_hw\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe.config
+D:\_hw\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe
+D:\_hw\TetrisProject\TetrisProject\bin\Debug\TetrisProject.pdb
+D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.View.resources
+D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
+D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb

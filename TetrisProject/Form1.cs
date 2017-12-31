@@ -24,6 +24,7 @@ namespace TetrisProject
         BufferedGraphics g;///
         SolidBrush b;
         Pen pen = new Pen(Color.Black, 1);//格線
+        int speed = 1;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -67,7 +68,8 @@ namespace TetrisProject
             btn_pause.Enabled = true;
             btn_start.Enabled = false;
             gameTimer.Start();
-
+            speed = 1;
+            gameTimer.Interval = 600 / (int)Level.Value / speed;
         }
 
         private void btn_pause_Click(object sender, EventArgs e)
@@ -116,7 +118,7 @@ namespace TetrisProject
 
         private void Level_ValueChanged(object sender, EventArgs e)
         {
-            gameTimer.Interval = 600 / (int)Level.Value;
+            gameTimer.Interval = 600 / (int)Level.Value / speed;
             textBox1.Focus();
         }
 
@@ -158,5 +160,15 @@ namespace TetrisProject
             btn_start.Enabled = true;
             MessageBox.Show("Game Over");
         }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (gameTimer.Enabled == true)
+                GameView.keyup(e);
+        }
+
+
+        public void speedUp() { speed = 10; gameTimer.Interval = 600 / (int)Level.Value / speed; }
+        public void speedDn() { speed = 1; gameTimer.Interval = 600 / (int)Level.Value / speed; }
     }
 }

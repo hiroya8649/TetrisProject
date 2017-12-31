@@ -92,7 +92,7 @@ namespace TetrisProject
             public int[][] getShape() { return shapeNow; }
             public Tetrominoes getShapeType() { return pieceShape; }
             public Color getColor() { return pieceColor; }
-        
+
             public Brick()
             {
                 width = 0; height = 0; angle = 0;
@@ -210,16 +210,16 @@ namespace TetrisProject
             {
                 if (b.getX() == 0)
                     return false;
-                for (int i = 0; i < b.getWidth(); i++)
+                Brick testB = new Brick(b);
+                testB.moveLeft();
+                for (int i = 0; i < testB.getWidth(); i++)
                 {
-                    for (int j = 0; j < b.getHeight(); j++)
+                    for (int j = 0; j < testB.getHeight(); j++)
                     {
-                        if (b.getShape()[j][i] == 1)
+                        if (testB.getShape()[j][i] == 1)
                         {
-                            if (boardTable[b.getY() + j, b.getX() + i - 1] == 2)
+                            if (boardTable[testB.getY() + j, testB.getX() + i] == 2)
                                 return false;
-                            else
-                                break;
                         }
                     }
                 }
@@ -230,16 +230,16 @@ namespace TetrisProject
             {
                 if (b.getX()+b.getWidth() == rowSize)
                     return false;
-                for (int i = b.getWidth() - 1 ; i >=0 ; i-- )
+                Brick testB = new Brick(b);
+                testB.moveRight();
+                for (int i = 0; i < testB.getWidth(); i++)
                 {
-                    for (int j = b.getHeight() - 1; j >=0 ; j--)
+                    for (int j = 0; j < testB.getHeight(); j++)
                     {
-                        if (b.getShape()[j][i] == 1)
+                        if (testB.getShape()[j][i] == 1)
                         {
-                            if (boardTable[b.getY() + j, b.getX() + i + 1] == 2)
+                            if (boardTable[testB.getY() + j, testB.getX() + i] == 2)
                                 return false;
-                            else
-                                break;
                         }
                     }
                 }

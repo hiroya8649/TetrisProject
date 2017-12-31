@@ -81,7 +81,7 @@ namespace TetrisProject
                 newBrick();
             }
         }
-   
+
         //方塊移動類  先檢查有沒有到邊界 沒有就執行動作 最後檢查有沒有滿行
         public void BrickDropDown()
         {

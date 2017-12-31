@@ -10,7 +10,7 @@ using static TetrisProject.Model;
 
 namespace TetrisProject
 {
-    public class View : Form
+    public class View : Form 
     {
         //主畫面大小WH 遊戲畫面大小WH 遊戲畫面位置XY 開始按鈕位置XY 暫停按鈕位置XY
         
@@ -66,18 +66,27 @@ namespace TetrisProject
                 case Keys.A:
                     GameController.BrickMoveLeft();
                     break;
-                case Keys.S:
-                    GameController.BrickDropDown();
-                    break;
                 case Keys.Space:
                     GameController.BrickDropDown();
                     break;
                 case Keys.W:
                     GameController.BrickRotate();
                     break;
+                case Keys.S:
+                    form.speedUp();
+                    break;
             }
         }
+        public void keyup(KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.S:
+                    form.speedDn();
+                    break;
 
+            }
+        }
         /*21 add function in 11/27*/
 
         public string getScore() {return GameController.getScore().ToString();}

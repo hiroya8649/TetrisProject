@@ -81,6 +81,11 @@
             0,
             0,
             0});
+            this.Level.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.Level.Name = "Level";
             this.Level.ReadOnly = true;
             this.Level.Size = new System.Drawing.Size(71, 25);
@@ -168,6 +173,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Level)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
