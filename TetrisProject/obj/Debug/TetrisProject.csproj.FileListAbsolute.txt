@@ -38,3 +38,13 @@ D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.View.resources
 D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
 D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
 D:\_hw\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb
+D:\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe.config
+D:\TetrisProject\TetrisProject\bin\Debug\TetrisProject.exe
+D:\TetrisProject\TetrisProject\bin\Debug\TetrisProject.pdb
+D:\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+D:\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Form1.resources
+D:\TetrisProject\TetrisProject\obj\Debug\TetrisProject.Properties.Resources.resources
+D:\TetrisProject\TetrisProject\obj\Debug\TetrisProject.View.resources
+D:\TetrisProject\TetrisProject\obj\Debug\TetrisProject.csproj.GenerateResource.Cache
+D:\TetrisProject\TetrisProject\obj\Debug\TetrisProject.exe
+D:\TetrisProject\TetrisProject\obj\Debug\TetrisProject.pdb

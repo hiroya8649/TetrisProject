@@ -17,23 +17,22 @@ namespace TetrisProject
         //private Background bg1 = new Background(500, 500, 200, 300, 0, 0, 1, 1, 50, 50);
         private Controller GameController;
         private Form1 form;
-        bool isGamePause = false;
 
         public View()
         {
 
         }
-        
+        //用來讓view知道form1
         public void passForm(Form1 f)
         {
             form = f;
         }
-        
+        //用來讓view知道controller
         public void passController(Controller  controller)
         {
             GameController = controller;
         }
-
+        //場景繪製刷新
         public void update(Board board,Brick brick)
         {
             int w = 0, h = 0;
@@ -42,20 +41,13 @@ namespace TetrisProject
             form.gameDraw(board, brick, w, h);
             form.changeScore();
         }
-
+        
         public void btnStart()
         {
             GameController.start();
         }
-
-        public void btnPause()
-        {
-            if (!isGamePause)
-                GameController.pause();
-            //else
-            //    GameController.resume();
-        }
-
+        
+        //操控方式WASD 空白鍵
         public void keyEvent(KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -77,6 +69,7 @@ namespace TetrisProject
                     break;
             }
         }
+        //讓S放開時回復正常速度
         public void keyup(KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -87,7 +80,6 @@ namespace TetrisProject
 
             }
         }
-        /*21 add function in 11/27*/
 
         public string getScore() {return GameController.getScore().ToString();}
 
@@ -95,31 +87,5 @@ namespace TetrisProject
         {
             form.gameOver();
         }
-        
-        private void drawSquare(Graphics g, int x, int y, Tetrominoes shape)
-        {
-            //    Color colors[] = { new Color(0, 0, 0), new Color(204, 102, 102),
-            //    new Color(102, 204, 102), new Color(102, 102, 204),
-            //    new Color(204, 204, 102), new Color(204, 102, 204),
-            //    new Color(102, 204, 204), new Color(218, 170, 0)
-            //};
-
-
-            //Color color = colors[shape.ordinal()];
-
-            //g.setColor(color);
-            //g.fillRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2);
-
-            //g.setColor(color.brighter());
-            //g.drawLine(x, y + squareHeight() - 1, x, y);
-            //g.drawLine(x, y, x + squareWidth() - 1, y);
-
-            //g.setColor(color.darker());
-            //g.drawLine(x + 1, y + squareHeight() - 1,
-            //                 x + squareWidth() - 1, y + squareHeight() - 1);
-            //g.drawLine(x + squareWidth() - 1, y + squareHeight() - 1,
-            //                 x + squareWidth() - 1, y + 1);
-        }
-
     }
 }

@@ -12,8 +12,6 @@ namespace TetrisProject
 {
     public class Controller
     {
-        /*21 add in 11/28*/
-        private int level = 0;
         private int score = 0;
 
         private Model.Brick curBrick;
@@ -28,15 +26,17 @@ namespace TetrisProject
             Color.Red, Color.Purple, Color.Black, Color.Blue, Color.Yellow, Color.Green, Color.Orange
         };
         
-        public Controller()//初始化
+        public Controller()
         {
         }
 
-        public Controller(Form1 f)//初始化
+        //讓他認識form1
+        public Controller(Form1 f)
         {
             form = f;
         }
 
+        //讓他認識form1跟view
         public Controller(Form1 f, View gameView,Size s)
         {
             form = f;
@@ -46,43 +46,32 @@ namespace TetrisProject
             boardSize = s;
         }
 
-        public void start()//開始按鈕
+        public void start()
         {
-            //初始化一些狀態
             r = new Random();
             curBoard = new Board();
             curBoard.setBoard(boardSize.Width, boardSize.Height);
             newBrick();
             score = 0;
-            
         }
 
-        public void pause()//暫停按鈕
+        //遊戲內容更新（即方塊下移）
+        public void update()
         {
-            //設定一些狀態
-        }
-
-        public void resume()//繼續按鈕
-        {
-            //設定一些狀態
-        }
-
-        public void update()//每秒更新一次狀態
-        {
-            if (curBoard.isDownEmpty(curBrick))//方塊有沒有到底
+            if (curBoard.isDownEmpty(curBrick))//方塊下面是否為空
             {
-                BrickOneLineDown();
+                BrickOneLineDown();//是就往下
             }
             else
             {
-                curBoard.pasteBrick(curBrick);
+                curBoard.pasteBrick(curBrick);//不是，就把他貼到棋盤上
                 int tmp = curBoard.fullCheck();
                 score += tmp * 100;
                 newBrick();
             }
         }
 
-        //方塊移動類  先檢查有沒有到邊界 沒有就執行動作 最後檢查有沒有滿行
+        //方塊移動類，先檢查有沒有到邊界，沒有就執行動作，如果是往下，最後檢查有沒有滿行
         public void BrickDropDown()
         {
             while (curBoard.isDownEmpty(curBrick))
@@ -131,7 +120,7 @@ namespace TetrisProject
             curBrick = new Brick();
             curBrick.setShape((Tetrominoes)type, colorTable[color]);
             GameView.update(curBoard, curBrick);
-            if (curBoard.deadCheck(curBrick))
+            if (curBoard.deadCheck(curBrick))//測試遊戲有沒有結束
             {
                 GameView.gameOver();
             }
