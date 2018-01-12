@@ -288,6 +288,8 @@ namespace TetrisProject
             {
                 if (b.getX() + b.getHeight() > rowSize)
                     return false;
+                if (b.getY() + b.getWidth() > colSize)
+                    return false;
                 Brick testB = new Brick(b);
                 testB.rotate();
                 for (int i = 0; i < testB.getWidth(); i++)

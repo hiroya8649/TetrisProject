@@ -31,9 +31,9 @@ namespace TetrisProject
             //這行改遊戲界面的格數，前者為row後者為col
             Size boardSize = new Size(10, 25);
             //四種不同界面
-            //setForm(new Size(700, 550), new Size(350, 450), new Point(25, 30), new Size(80, 48), new Point(475, 198), new Size(173, 44), new Point(475, 265), new Size(80, 48), new Point(568, 198), new Point(469, 119), new Point(577, 121), new Point(475, 30));
-            //setForm(new Size(700, 550), new Size(350, 450), new Point(275, 30), new Size(80, 48), new Point(25, 198), new Size(173, 44), new Point(25, 265), new Size(80, 48), new Point(118, 198), new Point(19, 119), new Point(127, 121), new Point(25, 30));
-            setForm(new Size(450, 700), new Size(350, 450), new Point(36, 89), new Size(147, 48), new Point(239, 20), new Size(80, 44), new Point(304, 562), new Size(80, 44), new Point(209, 562), new Point(42, 569), new Point(123, 573), new Point(36, 26));
+           // setForm(new Size(700, 550), new Size(350, 450), new Point(25, 30), new Size(80, 48), new Point(475, 198), new Size(173, 44), new Point(475, 265), new Size(80, 48), new Point(568, 198), new Point(469, 119), new Point(577, 121), new Point(475, 30));
+           setForm(new Size(700, 550), new Size(350, 450), new Point(275, 30), new Size(80, 48), new Point(25, 198), new Size(173, 44), new Point(25, 265), new Size(80, 48), new Point(118, 198), new Point(19, 119), new Point(127, 121), new Point(25, 30));
+            //setForm(new Size(450, 700), new Size(350, 450), new Point(36, 89), new Size(147, 48), new Point(239, 20), new Size(80, 44), new Point(304, 562), new Size(80, 44), new Point(209, 562), new Point(42, 569), new Point(123, 573), new Point(36, 26));
             //setForm(new Size(450, 700), new Size(350, 450), new Point(30, 156), new Size(147, 48), new Point(36, 33), new Size(80, 44), new Point(298, 33), new Size(80, 44), new Point(210, 33), new Point(29, 98), new Point(112, 102), new Point(206, 89));
             this.KeyPreview = true;
             GameView = new View();
